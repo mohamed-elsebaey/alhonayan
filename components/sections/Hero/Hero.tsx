@@ -18,6 +18,7 @@ const Hero = () => {
                   alt=""
                   width={1000}
                   height={250}
+                  priority={true}
                 />
               </div>
               <p className="text-gray-500 text-base font-normal leading-relaxed lg:text-start text-center">
@@ -35,11 +36,14 @@ const Hero = () => {
                 </Button>
               </Link>
             </div>
-            <div className="overflow-hidden ">
-              <img
+            <div className="overflow-hidden">
+              <Image  
+                width={1000}
+                height={1000}
                 className="lg:mx-0 mx-auto h-full rounded-3xl object-cover"
                 src={heroImage.src}
-                alt="about Us image"
+                alt="hero image"
+                priority={true}  
               />
             </div>
           </div>
