@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import { Cairo } from "next/font/google";
 import "./globals.css";
 import FooterSection from "@/components/sections/Footer";
-import Header from "@/components/pages/header/Header";
+import Header from "@/components/sections/header/Header";
+import { Toaster } from "sonner";
 
 const cairo = Cairo({
   weight: ['400', '500', '600', '700'],
@@ -21,13 +22,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ar" dir="rtl" suppressHydrationWarning>
+    <html lang="ar" dir="rtl" suppressHydrationWarning className="light">
       <body
         className={`${cairo.variable} font-sans antialiased`}
       >
         <Header userRole={false} profilePath="" />
         {children}
         <FooterSection/>
+        <Toaster />
       </body>
     </html>
   );

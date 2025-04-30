@@ -38,17 +38,16 @@ const DesignRequest = () => {
     budget: '',
     designReference: ''
   });
-  toast("Event has been created", {
-    description: "Sunday, December 03, 2023 at 9:00 AM",
-    action: {
-      label: "Undo",
-      onClick: () => console.log("Undo"),
-    },
-  })
+  // toast("Event has been created", {
+  //   description: "Sunday, December 03, 2023 at 9:00 AM",
+  //   action: {
+  //     label: "Undo",
+  //     onClick: () => console.log("Undo"),
+  //   },
+  // })
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    toast.success('تم إرسال الطلب بنجاح');
     
     // التحقق من صحة البيانات
     if (!formData.name || !formData.email || !formData.phone || !formData.serviceType || !formData.buildingType) {
