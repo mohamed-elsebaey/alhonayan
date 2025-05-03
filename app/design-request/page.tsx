@@ -1,20 +1,18 @@
-import DesignRequest from '@/components/pages/design-request/DesignRequest';
-import { Metadata } from 'next';
-import React from 'react'
+import DesignRequestPage from "@/components/pages/design-request/DesignRequestPage";
+import { Metadata } from "next";
+import React from "react";
 
 export const metadata: Metadata = {
-    title: "نموذج طلب تصميم",
-    description:
-      "نموذج طلب تصميم من دار الحنيان للاستشارات الهندسية",
-    // alternates: {
-    //   canonical: "",
-    // },
-  };
+  title: "طلب تصميم",
+  description:
+    "نموذج طلب تصميم من دار الحنيان للاستشارات الهندسية. يرجى ملء النموذج أدناه لتقديم طلبك.",
+  // alternates: {
+  //   canonical: "",
+  // },
+};
 
 const page = () => {
-  return (
-    <DesignRequest/>
-  )
-}
+  return <DesignRequestPage />;
+};
 
-export default page
+export default page;

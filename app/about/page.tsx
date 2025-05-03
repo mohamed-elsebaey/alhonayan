@@ -1,4 +1,5 @@
 // import AboutUs from "@/components/about/AboutUs";
+import AboutUsPage from "@/components/pages/about-us/AboutUsPage";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -13,8 +14,7 @@ export const metadata: Metadata = {
 function page() {
   return (
     <>
-      {/* <AboutUs /> */}
-      <div>About</div>
+      <AboutUsPage />
     </>
   );
 }
