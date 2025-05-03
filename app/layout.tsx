@@ -22,7 +22,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ar" dir="rtl" suppressHydrationWarning className="light">
+    <html lang="ar" dir="rtl" suppressHydrationWarning className="light max-w-[1800px] mx-auto">
       <body
         className={`${cairo.variable} font-sans antialiased`}
       >

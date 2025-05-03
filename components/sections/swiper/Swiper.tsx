@@ -40,7 +40,7 @@ const Carousel = ({
   }, [currentIndex, autoPlay, interval]);
 
   return (
-    <div className="relative w-full h-[500px] md:h-[calc(100vh-4rem)] overflow-hidden">
+    <div className="relative w-full h-[500px] md:h-[calc(100vh-4rem)] max-h-[1000px] overflow-hidden">
       {/* Images */}
       <div className="relative w-full h-full">
         {images.map((image, index) => (
@@ -52,8 +52,8 @@ const Carousel = ({
           >
             <Image
               src={image}
-              width={1000}
-              height={500}
+              width={2000}
+              height={1000}
               alt={`Carousel image ${index + 1}`}
               className="w-full h-full object-cover"
               priority={index === 0}
