@@ -29,12 +29,9 @@ function Header({
     setIsMenuOpen(() => false);
   };
   return (
-    // ( py-4 px-4 md:px-10 max-w-screen-xl mx-auto ) add this classes to all  sections.
     <OutsideClickHandler onOutsideClick={closeMenuHandler}>
-      {/* <div className="bg-white fixed top-0 left-0 right-0 border-b-2 border-primary/20 z-50">
-        <div className="flex flex-wrap items-center justify-between py-4 px-4 md:px-10 max-w-screen-xl mx-auto"> */}
       <div className="header-gradient" >
-        <div className="content-with flex flex-wrap items-center justify-between">
+        <div className="content-width flex flex-wrap items-center justify-between">
           <Link href="/" className="z-50" onClick={closeMenuHandler}>
             <Image
               src={logo}

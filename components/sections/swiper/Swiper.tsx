@@ -40,7 +40,7 @@ const Carousel = ({
   }, [currentIndex, autoPlay, interval]);
 
   return (
-    <div className="relative w-full h-[500px] md:h-[calc(100vh-4rem)] max-h-[1000px] overflow-hidden">
+    <div className="relative w-full h-[500px] md:h-[600px] rounded-4xl overflow-hidden">
       {/* Images */}
       <div className="relative w-full h-full">
         {images.map((image, index) => (
@@ -125,7 +125,7 @@ const Swiper = () => {
   const images = swiperImagesUrl.map((image) => image.src);
 
   return (
-    <div>
+    <div className="content-width py-10">
       <Carousel images={images} autoPlay interval={5000} />
     </div>
   );

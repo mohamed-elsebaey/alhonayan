@@ -157,7 +157,7 @@
   }
 }
 
-@utility content-with {
+@utility content-width {
   @apply px-4 md:px-10 max-w-screen-xl mx-auto;
 }
 
