@@ -123,14 +123,17 @@
   body {
     @apply bg-background text-foreground;
   }
-  /* p {
-    @apply text-light-100;
-  } */
+  p {
+    @apply text-gray-500 text-base font-normal leading-relaxed;
+  }
   h2 {
     @apply text-3xl font-semibold;
   }
   h3 {
     @apply text-2xl font-semibold;
+  }
+  ol {
+    @apply text-gray-700 leading-relaxed text-lg list-decimal list-inside space-y-2 text-start;
   }
 }
 
@@ -140,6 +143,12 @@
 
 @utility header-gradient {
   @apply bg-gradient-to-l from-[#0b3a4e] to-[#086992] text-white;
+}
+@utility bg-gradient-1 {
+  @apply bg-gradient-to-l from-[#0b3a4e] to-[#086992] text-white;
+}
+@utility bg-gradient-2 {
+  @apply bg-gradient-to-l from-[#086992] to-[#0b3a4e] text-white;
 }
 
 @utility animate-fadeIn {
