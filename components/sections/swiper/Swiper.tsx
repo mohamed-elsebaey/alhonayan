@@ -56,8 +56,9 @@ const Carousel = ({
               height={1000}
               alt={`Carousel image ${index + 1}`}
               className="w-full h-full object-cover"
-              priority={index === 0}
-              loading={index !== 0 ? "lazy" : "eager"}
+              // priority={index === 0}
+              // loading={index !== 0 ? "lazy" : "eager"}
+              loading="lazy"              
             />
           </div>
         ))}

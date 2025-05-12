@@ -20,6 +20,7 @@ const MissionAndVision = () => {
                 alt="Vision"
                 width={500}
                 height={500}
+                loading="lazy"
               />
             </div>
             <div className="lg:w-1/2 text-center lg:text-start">
@@ -43,6 +44,7 @@ const MissionAndVision = () => {
                 alt="Mission"
                 width={500}
                 height={500}
+                loading="lazy"
               />
             </div>
             <div className="lg:w-1/2 text-center lg:text-start">
@@ -72,6 +74,7 @@ const MissionAndVision = () => {
                 alt="Goal"
                 width={500}
                 height={500}
+                loading="lazy"
               />
             </div>
             <div className="lg:w-1/2 text-center lg:text-start">
