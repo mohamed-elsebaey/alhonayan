@@ -33,7 +33,7 @@ const SuccessPartners = () => {
             nextEl: ".swiper-prev",
           }}
           slidesPerView={1}
-          spaceBetween={30}
+          spaceBetween={16}
           loop={true}
           speed={1000} // Add transition speed in milliseconds
           effect={"fade"} // Add fade effect
@@ -42,30 +42,40 @@ const SuccessPartners = () => {
             disableOnInteraction: false,
           }}
           breakpoints={{
-            640: {
+            // Mobile first approach
+            320: {
               slidesPerView: 1,
-              spaceBetween: 12,
+              spaceBetween: 16,
+              slidesPerGroup: 1,
+            },
+            480: {
+              slidesPerView: 2,
+              spaceBetween: 20,
+              slidesPerGroup: 1,
             },
             768: {
-              slidesPerView: 2,
+              slidesPerView: 3,
               spaceBetween: 24,
+              slidesPerGroup: 1,
             },
             1024: {
               slidesPerView: 4,
-              spaceBetween: 32,
+              spaceBetween: 28,
+              slidesPerGroup: 1,
             },
             1280: {
               slidesPerView: 5,
               spaceBetween: 32,
+              slidesPerGroup: 1,
             },
           }}
         >
           {carouselImages.map((url, idx) => (
-            <SwiperSlide key={idx} className="max-w-[250]">
+            <SwiperSlide key={idx} className="md:max-w-[250]">
               <Image
                 src={url}
                 alt={`Slide ${idx + 1}`}
-                className="w-full h-44 object-cover rounded-3xl shadow-xl"
+                className="w-full h-56 md:h-44 object-contain rounded-3xl shadow-xl"
                 width={500}
                 height={500}
                 loading="lazy"
