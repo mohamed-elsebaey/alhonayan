@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 function notfound() {
   return (
     // return ( Error 404 Section Start
-    <section className="relative z-10 bg-primary py-[220px]">
+    <section className="relative z-10 bg-foreground py-[220px]">
       <div className="container mx-auto">
         <div className="-mx-4 flex">
           <div className="w-full px-4">

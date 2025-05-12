@@ -7,7 +7,7 @@ import Link from "next/link";
 const Hero = () => {
   return (
     <>
-      <section className="py-10 relative ">
+      <section className="section-margin relative ">
         <div className="content-width">
           <div className="w-full justify-start items-center gap-8 grid lg:grid-cols-2 grid-cols-1">
             <div className="flex flex-col gap-8 items-center lg:items-start">
@@ -20,7 +20,7 @@ const Hero = () => {
                   priority={true}
                 />
               </div>
-              <p className="text-gray-500 text-base font-normal leading-relaxed lg:text-start text-center">
+              <p className="lg:text-start text-center">
                 مكتب استشارات هندسي يقدم خدمات متكاملة لمختلف النشاطات والدراسات
                 الهندسية، من خلال كوكبة من المهندسين والمستشارين بخبرات وكفاءات
                 في مجال التخطيط والتصميم والإشراف والإدارة الإحترافية للمشاريع.

@@ -124,7 +124,7 @@
     @apply bg-background text-foreground;
   }
   p {
-    @apply text-gray-500 text-base font-normal leading-relaxed;
+    @apply text-gray-500 text-lg font-normal leading-relaxed;
   }
   h2 {
     @apply text-3xl font-semibold;
@@ -168,5 +168,9 @@
 
 @utility content-width {
   @apply px-4 md:px-10 max-w-screen-xl mx-auto;
+}
+
+@utility section-margin {
+  @apply mt-6 md:mt-10;
 }
 
