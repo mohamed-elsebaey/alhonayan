@@ -125,8 +125,11 @@ const Swiper = () => {
   const images = swiperImagesUrl.map((image) => image.src);
 
   return (
+    <div className="section-margin">
+
     <div className="content-width py-10">
       <Carousel images={images} autoPlay interval={5000} />
+    </div>
     </div>
   );
 };

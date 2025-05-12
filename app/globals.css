@@ -150,6 +150,9 @@
 @utility bg-gradient-2 {
   @apply bg-gradient-to-l from-[#086992] to-[#0b3a4e] text-white;
 }
+@utility bg-gradient-3 {
+  @apply bg-gradient-to-b from-[#086992]/50 via-white to-white ;
+}
 
 @utility animate-fadeIn {
   animation: fadeIn 0.3s ease-in-out;

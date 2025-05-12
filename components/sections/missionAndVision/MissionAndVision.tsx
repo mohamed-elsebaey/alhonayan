@@ -6,7 +6,7 @@ import missionAndVisionImage4 from "@/public/images/missionAndVision-image4.png"
 
 const MissionAndVision = () => {
   return (
-    <section className="py-20 bg-gradient-to-b from-primary-light to-primary-dark">
+    <section className="py-20">
       <div className="content-width">
         <h1 className="text-4xl font-extrabold text-center text-primary mb-12">
           رؤيتنا ورسالتنا

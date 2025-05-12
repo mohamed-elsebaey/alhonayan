@@ -8,7 +8,7 @@ import MissionAndVision from "@/components/sections/missionAndVision/MissionAndV
 
 const AboutUsPage = () => {
   return (
-    <div className="relative min-h-screen flex flex-col justify-center items-center shadow-2xl shadow-primary/50">
+    <div className="relative min-h-screen flex flex-col justify-center items-center">
       {/* Background Image */}
       <Image
         src={backgroundImage}
