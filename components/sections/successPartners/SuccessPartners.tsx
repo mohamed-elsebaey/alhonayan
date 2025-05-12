@@ -29,8 +29,8 @@ const SuccessPartners = () => {
           className="cursor-grab select-none"
           modules={[Navigation, Autoplay]}
           navigation={{
-            prevEl: ".swiper-prev",
-            nextEl: ".swiper-next",
+            prevEl: ".swiper-next",
+            nextEl: ".swiper-prev",
           }}
           slidesPerView={1}
           spaceBetween={30}
