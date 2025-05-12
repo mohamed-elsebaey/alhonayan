@@ -43,11 +43,11 @@ const SuccessPartners = () => {
           }}
           breakpoints={{
             640: {
-              slidesPerView: 2,
-              spaceBetween: 24,
+              slidesPerView: 1,
+              spaceBetween: 12,
             },
             768: {
-              slidesPerView: 3,
+              slidesPerView: 2,
               spaceBetween: 24,
             },
             1024: {
