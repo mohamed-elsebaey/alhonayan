@@ -1,8 +1,11 @@
-import logoAndTitleImage from "@/public/logo/logo-title.png";
-import heroImage from "@/public/images/4.jpg";
 import Image from "next/image";
-import { Button } from "@/components/ui/button";
 import Link from "next/link";
+
+import logoAndTitleImage from "@/public/logo/logo-title.png";
+import heroImage from "@/public/images/hero-image.png";
+
+import { Button } from "@/components/ui/button";
+import { DownloadCompanyProfileButton } from "../companyProfile/DownloadCompanyProfileButton";
 
 const Hero = () => {
   return (
@@ -25,21 +28,24 @@ const Hero = () => {
                 الهندسية، من خلال كوكبة من المهندسين والمستشارين بخبرات وكفاءات
                 في مجال التخطيط والتصميم والإشراف والإدارة الإحترافية للمشاريع.
               </p>
-              <Link href="/design-request">
-                <Button
-                  variant="secondary"
-                  size="lg"
-                  className="font-semibold cursor-pointer"
-                >
-                  طلب تصميم
-                </Button>
-              </Link>
+              <div className="flex gap-4">
+                <Link href="/design-request">
+                  <Button
+                    variant="default"
+                    size="lg"
+                    className="font-semibold cursor-pointer"
+                  >
+                    أطلب خدمتك الأن
+                  </Button>
+                </Link>
+                <DownloadCompanyProfileButton />
+              </div>
             </div>
             <div className="overflow-hidden">
               <Image
                 width={1000}
                 height={1000}
-                className="lg:mx-0 mx-auto h-full rounded-3xl object-cover"
+                className="lg:mx-0 mx-auto max-h-[550px] rounded-3xl object-cover"
                 src={heroImage.src}
                 alt="hero image"
                 priority={true}

@@ -4,6 +4,7 @@ import "./globals.css";
 import FooterSection from "@/components/sections/Footer";
 import Header from "@/components/sections/header/Header";
 import { Toaster } from "sonner";
+import ScrollToTop from "@/components/ScrollToTop";
 
 const cairo = Cairo({
   weight: ['400', '500', '600', '700'],
@@ -29,7 +30,8 @@ export default function RootLayout({
         <Header userRole={false} profilePath="" />
         {children}
         <FooterSection/>
-        <Toaster />
+        <ScrollToTop />
+        <Toaster /> 
       </body>
     </html>
   );

@@ -87,3 +87,27 @@ export const successPartnersImages: string[] = [
   partner31.src,
   partner32.src,
 ];
+
+// **********************************
+
+export const whatsappContacts: Array<{
+  number: string;
+  label: string;
+  address: string;
+}> = [
+  {
+    number: "+966551750023",
+    label: "الرياض",
+    address: "طريق أنس بن مالك - حي الياسمين",
+  },
+  // {
+  //   number: "0501438198",
+  //   label: "سكاكا",
+  //   address: "",
+  // },
+  {
+    number: "+966501502368",
+    label: "القريات",
+    address: "شارع الملك فيصل - حي الخالدية",
+  },
+];
