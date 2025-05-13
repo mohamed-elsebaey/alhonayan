@@ -3,7 +3,7 @@
 export const navigationLinks = [
   { href: "/", label: "الصفحة الرئيسية" },
   { href: "/about", label: "من نحن؟" },
-  { href: "/about", label: "خدماتنا" },
+  { href: "/services", label: "خدماتنا" },
   { href: "/projects", label: "مشاريعنا" },
   { href: "/design-request", label: "نموذج طلب تصميم" },
 ];

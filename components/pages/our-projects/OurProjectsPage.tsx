@@ -10,20 +10,20 @@ const OurProjectsPage = () => {
 
   return (
     <>
-      <section className="pt-20 pb-12 lg:pt-[120px] lg:pb-[90px] dark:bg-dark">
+      <section className="pt-16 pb-12 lg:pt-16 lg:pb-[90px]">
         <div className="content-width">
           <div className="flex flex-wrap -mx-4">
             <div className="w-full px-4">
               <div className="mx-auto mb-[60px] max-w-[510px] text-center">
                 <span className="text-primary mb-2 block text-lg font-semibold">
-                  Our Portfolio
+                  مشاريعنا
                 </span>
-                <h2 className="text-dark mb-3 text-3xl leading-[1.208] font-bold sm:text-4xl md:text-[40px]">
-                  Our Recent Projects
+                <h2 className="mb-3 text-2xl leading-[1.208] font-bold sm:text-3xl md:text-[40px]">
+                  احدث المشاريع
                 </h2>
-                <p className="text-body-color text-base dark:text-dark-6">
-                  There are many variations of passages of Lorem Ipsum available
-                  but the majority have suffered alteration in some form.
+                <p>
+                  استعرض مشاريع دار الحنيان للاستشارات الهندسية التي تعكس التميز
+                  والابتكار في تقديم الحلول الهندسية المتكاملة.
                 </p>
               </div>
             </div>
@@ -41,55 +41,43 @@ const OurProjectsPage = () => {
                         : "inactiveClasses text-body-color dark:text-dark-6 hover:bg-primary hover:text-white"
                     }`}
                   >
-                    All Projects
+                    جميع المشاريع
                   </button>
                 </li>
                 <li className="mb-1">
                   <button
-                    onClick={() => handleProject("branding")}
+                    onClick={() => handleProject("الأعمال المساحية")}
                     className={`inline-block rounded-lg py-2 px-5 text-center text-base font-semibold transition md:py-3 lg:px-8 ${
-                      showCard === "branding"
+                      showCard === "الأعمال المساحية"
                         ? "activeClasses bg-primary text-white"
                         : "inactiveClasses text-body-color dark:text-dark-6 hover:bg-primary hover:text-white"
                     }`}
                   >
-                    Branding
+                    الأعمال المساحية
                   </button>
                 </li>
                 <li className="mb-1">
                   <button
-                    onClick={() => handleProject("design")}
+                    onClick={() => handleProject("تصميم خارجي")}
                     className={`inline-block rounded-lg py-2 px-5 text-center text-base font-semibold transition md:py-3 lg:px-8 ${
-                      showCard === "design"
+                      showCard === "تصميم خارجي"
                         ? "activeClasses bg-primary text-white"
                         : "inactiveClasses text-body-color dark:text-dark-6 hover:bg-primary hover:text-white"
                     }`}
                   >
-                    Design
+                    تصميم خارجي
                   </button>
                 </li>
                 <li className="mb-1">
                   <button
-                    onClick={() => handleProject("marketing")}
+                    onClick={() => handleProject("تصميم داخلي")}
                     className={`inline-block rounded-lg py-2 px-5 text-center text-base font-semibold transition md:py-3 lg:px-8 ${
-                      showCard === "marketing"
+                      showCard === "تصميم داخلي"
                         ? "activeClasses bg-primary text-white"
                         : "inactiveClasses text-body-color dark:text-dark-6 hover:bg-primary hover:text-white"
                     }`}
                   >
-                    Marketing
-                  </button>
-                </li>
-                <li className="mb-1">
-                  <button
-                    onClick={() => handleProject("development")}
-                    className={`inline-block rounded-lg py-2 px-5 text-center text-base font-semibold transition md:py-3 lg:px-8 ${
-                      showCard === "development"
-                        ? "activeClasses bg-primary text-white"
-                        : "inactiveClasses text-body-color dark:text-dark-6 hover:bg-primary hover:text-white"
-                    }`}
-                  >
-                    Development
+                    تصميم داخلي
                   </button>
                 </li>
               </ul>

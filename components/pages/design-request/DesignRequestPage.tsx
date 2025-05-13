@@ -2,9 +2,7 @@
 import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
 import { Card } from "@/components/ui/card";
 import { toast } from "sonner";
 
@@ -38,13 +36,6 @@ const DesignRequestPage = () => {
     budget: "",
     designReference: "",
   });
-  // toast("Event has been created", {
-  //   description: "Sunday, December 03, 2023 at 9:00 AM",
-  //   action: {
-  //     label: "Undo",
-  //     onClick: () => console.log("Undo"),
-  //   },
-  // })
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -73,213 +64,213 @@ const DesignRequestPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 py-12">
-      <div className="max-w-4xl mx-auto px-4">
-        <Card className="p-8 shadow-lg">
-          <h1 className="text-3xl font-bold text-right mb-8 text-primary">
-            نموذج طلب تصميم
-          </h1>
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 py-12">
+      <div className="max-w-5xl mx-auto px-4">
+        <Card className="p-8 shadow-xl bg-white/90 backdrop-blur-sm">
+          <div className="text-center mb-10">
+            <h1 className="text-4xl font-bold text-primary mb-2">
+              نموذج طلب تصميم
+            </h1>
+            <p className="text-gray-600">
+              يرجى تعبئة النموذج التالي بكافة البيانات المطلوبة
+            </p>
+          </div>
 
-          <form onSubmit={handleSubmit} className="space-y-8 text-right">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {/* الاسم */}
-              <div className="space-y-2">
-                <Label className="text-lg">الاسم</Label>
-                <Input
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  placeholder="الاسم"
-                  className="w-full focus:ring-2 focus:ring-primary"
-                />
-              </div>
-
-              {/* البريد */}
-              <div className="space-y-2">
-                <Label className="text-lg">البريد الإلكتروني</Label>
-                <Input
-                  name="email"
-                  type="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  placeholder="example@domain.com"
-                  className="w-full focus:ring-2 focus:ring-primary"
-                />
-              </div>
-
-              {/* الجوال */}
-              <div className="space-y-2">
-                <Label className="text-lg">الجوال</Label>
-                <Input
-                  name="phone"
-                  type="tel"
-                  value={formData.phone}
-                  onChange={handleChange}
-                  placeholder="رقم الجوال"
-                  className="w-full focus:ring-2 focus:ring-primary"
-                />
-              </div>
-
-              {/* المدينة */}
-              <div className="space-y-2">
-                <Label className="text-lg">المدينة</Label>
-                <Input
-                  name="city"
-                  value={formData.city}
-                  onChange={handleChange}
-                  placeholder="المدينة"
-                  className="w-full focus:ring-2 focus:ring-primary"
-                />
+          <form onSubmit={handleSubmit} className="space-y-8">
+            {/* Personal Information Section */}
+            <div className="bg-gray-50 p-6 rounded-lg">
+              <h2 className="text-xl font-semibold text-right mb-4 text-primary">
+                المعلومات الشخصية
+              </h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="space-y-2">
+                  <Label className="text-lg font-medium">الاسم</Label>
+                  <Input
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    placeholder="الاسم الكامل"
+                    className="w-full transition-all hover:border-primary"
+                  />
+                </div>
+                <div className="space-y-2">
+                  <Label className="text-lg font-medium">البريد الإلكتروني</Label>
+                  <Input
+                    name="email"
+                    type="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    placeholder="example@domain.com"
+                    className="w-full transition-all hover:border-primary"
+                  />
+                </div>
+                <div className="space-y-2">
+                  <Label className="text-lg font-medium">الجوال</Label>
+                  <Input
+                    name="phone"
+                    type="tel"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    placeholder="+966 XX XXX XXXX"
+                    className="w-full transition-all hover:border-primary text-right"
+                    dir="ltr"
+                  />
+                </div>
+                <div className="space-y-2">
+                  <Label className="text-lg font-medium">المدينة</Label>
+                  <Input
+                    name="city"
+                    value={formData.city}
+                    onChange={handleChange}
+                    placeholder="المدينة"
+                    className="w-full transition-all hover:border-primary"
+                  />
+                </div>
               </div>
             </div>
 
-            {/* نوع الخدمة التصميمية */}
-            <div className="space-y-4">
-              <Label className="text-lg">نوع الخدمة التصميمية</Label>
-              <RadioGroup
-                value={formData.serviceType}
-                onValueChange={(value) =>
-                  setFormData((prev) => ({ ...prev, serviceType: value }))
-                }
-                className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
-              >
-                {[
-                  "مقترح",
-                  "مبدئي",
-                  "مخطط",
-                  "مخطط نهائي",
-                  "مخطط تنفيذية والإنشائي",
-                  "مخططات وتشطيب",
-                  "تصميم داخلي",
-                  "إشراف",
-                  "تعديل",
-                ].map((service) => (
-                  <div
-                    key={service}
-                    className="flex items-center space-x-2 flex-row-reverse bg-gray-50 p-3 rounded-lg hover:bg-gray-100 transition-colors"
-                  >
-                    <RadioGroupItem value={service} id={service} />
-                    <Label htmlFor={service} className="cursor-pointer">
-                      {service}
-                    </Label>
+            {/* Project Details Section */}
+            <div className="bg-gray-50 p-6 rounded-lg">
+              <h2 className="text-xl font-semibold text-right mb-4 text-primary">
+                تفاصيل المشروع
+              </h2>
+              <div className="space-y-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="space-y-2">
+                    <Label className="text-lg font-medium">نوع الخدمة التصميمية</Label>
+                    <select
+                      name="serviceType"
+                      value={formData.serviceType}
+                      onChange={(e) =>
+                        setFormData((prev) => ({
+                          ...prev,
+                          serviceType: e.target.value,
+                        }))
+                      }
+                      className="w-full p-3 border border-gray-300 rounded-lg transition-all hover:border-primary"
+                    >
+                      <option value="" disabled>
+                        اختر نوع الخدمة
+                      </option>
+                      {[
+                        "تصميم معماري",
+                        "تصميم داخلي",
+                        "تصميم إنشائي",
+                        "تنسيق مواقع",
+                        "ميكانيكي",
+                        "سباكة",
+                        "إدارة مشروع",
+                        "تأثيث",
+                        "إشراف هندسي",
+                        "استشارات هندسية",
+                        "رفع مساحي",
+                        "فرز مخططات",
+                        "دراسات هندسية",
+                        "رخصة بناء",
+                        "أخرى",
+                      ].map((service) => (
+                        <option key={service} value={service}>
+                          {service}
+                        </option>
+                      ))}
+                    </select>
                   </div>
-                ))}
-              </RadioGroup>
-            </div>
 
-            {/* نوع المنشأة */}
-            <div className="space-y-4">
-              <Label className="text-lg">نوع المنشأة</Label>
-              <RadioGroup
-                value={formData.buildingType}
-                onValueChange={(value) =>
-                  setFormData((prev) => ({ ...prev, buildingType: value }))
-                }
-                className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
-              >
-                {[
-                  "تصميم سكني",
-                  "تصميم تجاري",
-                  "تصميم صناعي",
-                  "تصميم موقع",
-                  "مستشفى",
-                  "منتجع",
-                  "بناية سكنية",
-                  "تأهيل",
-                  "تأهيل هندسي",
-                ].map((type) => (
-                  <div
-                    key={type}
-                    className="flex items-center space-x-2 flex-row-reverse bg-gray-50 p-3 rounded-lg hover:bg-gray-100 transition-colors"
-                  >
-                    <RadioGroupItem value={type} id={type} />
-                    <Label htmlFor={type} className="cursor-pointer">
-                      {type}
-                    </Label>
+                  <div className="space-y-2">
+                    <Label className="text-lg font-medium">نوع المشروع</Label>
+                    <select
+                      name="buildingType"
+                      value={formData.buildingType}
+                      onChange={(e) =>
+                        setFormData((prev) => ({
+                          ...prev,
+                          buildingType: e.target.value,
+                        }))
+                      }
+                      className="w-full p-3 border border-gray-300 rounded-lg transition-all hover:border-primary"
+                    >
+                      <option value="" disabled>
+                        اختر نوع المشروع
+                      </option>
+                      {[
+                        "سكني",
+                        "فيلا",
+                        "دوبلكس",
+                        "مجمع تجاري",
+                        "متعدد الإستخدام",
+                        "مبنى متوسط الإرتفاع",
+                        "مستودعات ومصانع",
+                        "مبنى عالي الإرتفاع",
+                        "إستراحة",
+                        "شاليه",
+                      ].map((type) => (
+                        <option key={type} value={type}>
+                          {type}
+                        </option>
+                      ))}
+                    </select>
                   </div>
-                ))}
-              </RadioGroup>
-            </div>
+                </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {/* رقم قطعة الأرض */}
-              <div className="space-y-2">
-                <Label className="text-lg">رقم قطعة الأرض</Label>
-                <Input
-                  name="plotNumber"
-                  value={formData.plotNumber}
-                  onChange={handleChange}
-                  placeholder="رقم قطعة الأرض"
-                  className="w-full focus:ring-2 focus:ring-primary"
-                />
-              </div>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                  <div className="space-y-2">
+                    <Label className="text-lg font-medium">مساحة الأرض</Label>
+                    <Input
+                      name="area"
+                      type="number"
+                      min={0}
+                      value={formData.area}
+                      onChange={handleChange}
+                      placeholder="المساحة بالمتر المربع"
+                      className="w-full transition-all hover:border-primary"
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <Label className="text-lg font-medium">طول الواجهة</Label>
+                    <Input
+                      name="plotNumber"
+                      type="number"
+                      min={0}
+                      value={formData.plotNumber}
+                      onChange={handleChange}
+                      placeholder="الطول بالمتر"
+                      className="w-full transition-all hover:border-primary"
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <Label className="text-lg font-medium">عرض الواجهة</Label>
+                    <Input
+                      name="planNumber"
+                      type="number"
+                      min={0}
+                      value={formData.planNumber}
+                      onChange={handleChange}
+                      placeholder="العرض بالمتر"
+                      className="w-full transition-all hover:border-primary"
+                    />
+                  </div>
+                </div>
 
-              {/* رقم المخطط */}
-              <div className="space-y-2">
-                <Label className="text-lg">رقم المخطط</Label>
-                <Input
-                  name="planNumber"
-                  value={formData.planNumber}
-                  onChange={handleChange}
-                  placeholder="رقم المخطط"
-                  className="w-full focus:ring-2 focus:ring-primary"
-                />
-              </div>
-
-              {/* مساحة الأرض */}
-              <div className="space-y-2">
-                <Label className="text-lg">مساحة الأرض</Label>
-                <Input
-                  name="area"
-                  value={formData.area}
-                  onChange={handleChange}
-                  placeholder="مساحة الأرض"
-                  className="w-full focus:ring-2 focus:ring-primary"
-                />
-              </div>
-
-              {/* عدد الأدوار */}
-              <div className="space-y-2">
-                <Label className="text-lg">عدد الأدوار</Label>
-                <Input
-                  name="floors"
-                  value={formData.floors}
-                  onChange={handleChange}
-                  placeholder="عدد الأدوار"
-                  className="w-full focus:ring-2 focus:ring-primary"
-                />
-              </div>
-
-              {/* الميزانية */}
-              <div className="space-y-2">
-                <Label className="text-lg">الميزانية</Label>
-                <Input
-                  name="budget"
-                  value={formData.budget}
-                  onChange={handleChange}
-                  placeholder="الميزانية"
-                  className="w-full focus:ring-2 focus:ring-primary"
-                />
+                <div className="space-y-2">
+                  <Label className="text-lg font-medium">الميزانية المتوقعة</Label>
+                  <Input
+                    name="budget"
+                    type="number"
+                    min={0}
+                    value={formData.budget}
+                    onChange={handleChange}
+                    placeholder="الميزانية بالريال السعودي"
+                    className="w-full transition-all hover:border-primary"
+                  />
+                </div>
               </div>
             </div>
 
-            {/* المرجعية النهائية للتصميم */}
-            <div className="space-y-2">
-              <Label className="text-lg">المرجعية النهائية للتصميم</Label>
-              <Textarea
-                name="designReference"
-                value={formData.designReference}
-                onChange={handleChange}
-                placeholder="المرجعية النهائية للتصميم"
-                className="w-full focus:ring-2 focus:ring-primary min-h-[150px]"
-              />
-            </div>
-
-            <div className="text-center pt-6">
+            <div className="text-center pt-8">
               <Button
                 type="submit"
                 size="lg"
-                className="bg-primary hover:bg-primary/90 text-white px-8 py-6 text-lg"
+                className="bg-primary hover:bg-primary/90 text-white px-12 py-6 text-lg rounded-full transition-all transform hover:scale-105"
               >
                 إرسال الطلب
               </Button>
@@ -292,4 +283,3 @@ const DesignRequestPage = () => {
 };
 
 export default DesignRequestPage;
-
