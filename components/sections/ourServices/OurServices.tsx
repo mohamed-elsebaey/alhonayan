@@ -27,8 +27,8 @@ export const OurServices = () => {
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
           <div className="group header-gradient p-8 rounded-2xl shadow-lg hover:shadow-2xl border border-gray-200 transition-all duration-300 text-center">
-            <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-white/30 transition-colors duration-300">
-              <Home className="w-8 h-8 text-white group-hover:scale-110 transition-transform duration-300" />
+            <div className="w-20 h-20  rounded-full flex items-center justify-center mx-auto mb-0 group-hover:bg-white/30 transition-colors duration-300">
+              <Home className="w-12 h-12 text-white group-hover:scale-110 transition-transform duration-300" />
             </div>
             <p className="text-xl font-semibold text-white group-hover:text-gray-200">
               التصميمات المعمارية
@@ -38,8 +38,8 @@ export const OurServices = () => {
             </p>
           </div>
           <div className="group header-gradient p-8 rounded-2xl shadow-lg hover:shadow-2xl border border-gray-200 transition-all duration-300 text-center">
-            <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-white/30 transition-colors duration-300">
-              <Building className="w-8 h-8 text-white group-hover:scale-110 transition-transform duration-300" />
+            <div className="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-0 group-hover:bg-white/30 transition-colors duration-300">
+              <Building className="w-12 h-12 text-white group-hover:scale-110 transition-transform duration-300" />
             </div>
             <p className="text-xl font-semibold text-white group-hover:text-gray-200">
               التصميمات الإنشائية
@@ -49,8 +49,8 @@ export const OurServices = () => {
             </p>
           </div>
           <div className="group header-gradient p-8 rounded-2xl shadow-lg hover:shadow-2xl border border-gray-200 transition-all duration-300 text-center">
-            <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-white/30 transition-colors duration-300">
-              <Settings className="w-8 h-8 text-white group-hover:scale-110 transition-transform duration-300" />
+            <div className="w-20 h-20  rounded-full flex items-center justify-center mx-auto mb-0 group-hover:bg-white/30 transition-colors duration-300">
+              <Settings className="w-12 h-12 text-white group-hover:scale-110 transition-transform duration-300" />
             </div>
             <p className="text-xl font-semibold text-white group-hover:text-gray-200">
               التصميمات الميكانيكية
@@ -60,8 +60,8 @@ export const OurServices = () => {
             </p>
           </div>
           <div className="group header-gradient p-8 rounded-2xl shadow-lg hover:shadow-2xl border border-gray-200 transition-all duration-300 text-center">
-            <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-white/30 transition-colors duration-300">
-              <Map className="w-8 h-8 text-white group-hover:scale-110 transition-transform duration-300" />
+            <div className="w-20 h-20  rounded-full flex items-center justify-center mx-auto mb-0 group-hover:bg-white/30 transition-colors duration-300">
+              <Map className="w-12 h-12 text-white group-hover:scale-110 transition-transform duration-300" />
             </div>
             <p className="text-xl font-semibold text-white group-hover:text-gray-200">
               الأعمال المساحية
@@ -71,8 +71,8 @@ export const OurServices = () => {
             </p>
           </div>
           <div className="group header-gradient p-8 rounded-2xl shadow-lg hover:shadow-2xl border border-gray-200 transition-all duration-300 text-center">
-            <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-white/30 transition-colors duration-300">
-              <ClipboardList className="w-8 h-8 text-white group-hover:scale-110 transition-transform duration-300" />
+            <div className="w-20 h-20  rounded-full flex items-center justify-center mx-auto mb-0 group-hover:bg-white/30 transition-colors duration-300">
+              <ClipboardList className="w-12 h-12 text-white group-hover:scale-110 transition-transform duration-300" />
             </div>
             <p className="text-xl font-semibold text-white group-hover:text-gray-200">
               الإشراف على التنفيذ
@@ -82,8 +82,8 @@ export const OurServices = () => {
             </p>
           </div>
           <div className="group header-gradient p-8 rounded-2xl shadow-lg hover:shadow-2xl border border-gray-200 transition-all duration-300 text-center">
-            <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-white/30 transition-colors duration-300">
-              <ShieldAlert className="w-8 h-8 text-white group-hover:scale-110 transition-transform duration-300" />
+            <div className="w-20 h-20  rounded-full flex items-center justify-center mx-auto mb-0 group-hover:bg-white/30 transition-colors duration-300">
+              <ShieldAlert className="w-12 h-12 text-white group-hover:scale-110 transition-transform duration-300" />
             </div>
             <p className="text-xl font-semibold text-white group-hover:text-gray-200">
               تصميمات الأمن والسلامة
