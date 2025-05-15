@@ -5,17 +5,16 @@ import { Button } from "@/components/ui/button";
 import { services } from "./_constants";
 import { Metadata } from "next";
 
-type ServiceParams = {
+type Props = {
   params: {
     service: string;
   };
 };
 
-export async function generateMetadata({
-  params,
-}: ServiceParams): Promise<Metadata> {
-  const resolvedParams = params.service;
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const resolvedParams = (await params).service;
   const serviceObj = services[resolvedParams as keyof typeof services];
+
 
   if (!serviceObj) {
     return {
@@ -41,8 +40,8 @@ export async function generateMetadata({
   };
 }
 
-export default async function page({ params }: ServiceParams) {
-  const resolvedParams = params.service;
+export default async function Page({ params }: Props) {
+  const resolvedParams = (await params).service;
   const service = services[resolvedParams as keyof typeof services];
 
   // Handle invalid service URLs
