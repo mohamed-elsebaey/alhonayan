@@ -15,16 +15,13 @@ export async function generateMetadata({
   params,
 }: ServiceParams): Promise<Metadata> {
   // get the article name from the URL /.....
-  const serviceKey = params.service as keyof typeof services;
-  const serviceObj = services[serviceKey];
+  const resolvedParams  = (await params).service;
+  const serviceObj = services[resolvedParams as keyof typeof services];
 
   if (!serviceObj) {
     return {
       title: "",
       description: "",
-      alternates: {
-        canonical: `https://www.alhonayan.com/services/${params.service}`,
-      },
     };
   }
 
@@ -40,14 +37,14 @@ export async function generateMetadata({
         : serviceObj.description.ar
       : "",
     alternates: {
-      canonical: `https://www.alhonayan.com/services/${params.service}`,
+      canonical: `https://www.alhonayan.com/services/${resolvedParams}`,
     },
   };
 }
 
 export default async function page({ params }: ServiceParams) {
-  const serviceKey = params.service as keyof typeof services;
-  const service = await services[serviceKey];
+  const resolvedParams  = (await params).service;
+  const service = services[resolvedParams as keyof typeof services];
 
   // Handle invalid service URLs
   if (!service) {

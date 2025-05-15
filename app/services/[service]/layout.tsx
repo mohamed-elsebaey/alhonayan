@@ -10,15 +10,16 @@ interface LayoutProps {
   }>;
 }
 
+
 export default async function Layout({
   children,
   params,
 }: LayoutProps) {
-  const resolvedParams = await params;
+  const resolvedParams = (await params).service;
 
   return (
     <>
-      <Breadcrumb serviceKey={resolvedParams.service} />
+      <Breadcrumb serviceKey={resolvedParams} />
       {children}
     </>
   );
