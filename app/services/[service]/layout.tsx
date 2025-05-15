@@ -10,7 +10,7 @@ interface LayoutProps {
   };
 }
 
-export default async function Layout({
+export default function Layout({
   children,
   params,
 }: LayoutProps) {
