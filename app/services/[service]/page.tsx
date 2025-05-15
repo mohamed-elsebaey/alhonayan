@@ -6,12 +6,12 @@ import { services } from "./_constants";
 import { Metadata } from "next";
 
 type Props = {
-  params: {
+  params: Promise<{
     service: string;
-  };
+  }>;
 };
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+export async function generateMetadata({ params }: Props): Promise<Metadata> { 
   const resolvedParams = (await params).service;
   const serviceObj = services[resolvedParams as keyof typeof services];
 
