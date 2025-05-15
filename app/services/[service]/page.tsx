@@ -68,7 +68,7 @@ export default async function Page({ params }: Props) {
               className="w-full h-full max-h-[550px]"
             />
           </div>
-          <div className="lg:w-1/2 text-center lg:text-start">
+          <div className="lg:w-1/2 w-full text-start">
             <ol className="space-y-4 text-lg font-medium">
               {service.listItems.map((text, index) => (
                 <ListItem key={index} count={index + 1} text={text.ar} />
