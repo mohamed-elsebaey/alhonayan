@@ -3,17 +3,17 @@ import Link from "next/link";
 import { ArrowLeft, Home } from "lucide-react";
 import { services } from "./_constants";
 
-interface ServiceLayoutProps {
+interface LayoutProps {
   children: React.ReactNode;
   params: {
     service: string;
   };
 }
 
-export default function ServiceLayout({
+export default async function Layout({
   children,
   params,
-}: ServiceLayoutProps) {
+}: LayoutProps) {
   return (
     <>
       <Breadcrumb serviceKey={params.service} />
