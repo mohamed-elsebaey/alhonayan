@@ -96,17 +96,18 @@ export const whatsappContacts: Array<{
   address: string;
 }> = [
   {
-    number: "+966551750023",
+    number: "+966508153268",
     label: "الرياض",
     address: "طريق أنس بن مالك - حي الياسمين",
   },
-  // {
-  //   number: "0501438198",
-  //   label: "سكاكا",
-  //   address: "",
-  // },
   {
-    number: "+966501502368",
+    // number: "+966146223371",
+    number: "+966508153268",
+    label: "سكاكا",
+    address: "شارع مكة المكرمة - الحي الاداري",
+  },
+  {
+    number: "+966583195157",
     label: "القريات",
     address: "شارع الملك فيصل - حي الخالدية",
   },
