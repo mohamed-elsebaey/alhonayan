@@ -14,8 +14,7 @@ type ServiceParams = {
 export async function generateMetadata({
   params,
 }: ServiceParams): Promise<Metadata> {
-  // get the article name from the URL /.....
-  const resolvedParams  = (await params).service;
+  const resolvedParams = params.service;
   const serviceObj = services[resolvedParams as keyof typeof services];
 
   if (!serviceObj) {
@@ -43,7 +42,7 @@ export async function generateMetadata({
 }
 
 export default async function page({ params }: ServiceParams) {
-  const resolvedParams  = (await params).service;
+  const resolvedParams = params.service;
   const service = services[resolvedParams as keyof typeof services];
 
   // Handle invalid service URLs
