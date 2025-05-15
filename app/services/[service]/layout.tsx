@@ -5,18 +5,20 @@ import { services } from "./_constants";
 
 interface LayoutProps {
   children: React.ReactNode;
-  params: {
+  params: Promise<{
     service: string;
-  };
+  }>;
 }
 
-export default function Layout({
+export default async function Layout({
   children,
   params,
 }: LayoutProps) {
+  const resolvedParams = await params;
+
   return (
     <>
-      <Breadcrumb serviceKey={params.service} />
+      <Breadcrumb serviceKey={resolvedParams.service} />
       {children}
     </>
   );
