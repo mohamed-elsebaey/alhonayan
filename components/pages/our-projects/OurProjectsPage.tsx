@@ -1,5 +1,9 @@
 "use client";
-import React, { useState } from "react";
+import Image from "next/image";
+import React, { Suspense, useState } from "react";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { projectsTopics, projectsCategories } from "./_constants";
 
 const OurProjectsPage = () => {
   const [showCard, setShowCard] = useState("all");
@@ -10,128 +14,65 @@ const OurProjectsPage = () => {
 
   return (
     <>
-      <section className="pt-16 pb-12 lg:pt-16 lg:pb-[90px]">
+      <section className="section-margin mb-20 min-h-screen">
         <div className="content-width">
-          <div className="flex flex-wrap -mx-4">
-            <div className="w-full px-4">
-              <div className="mx-auto mb-[60px] max-w-[510px] text-center">
-                <span className="text-primary mb-2 block text-lg font-semibold">
-                  مشاريعنا
-                </span>
-                <h2 className="mb-3 text-2xl leading-[1.208] font-bold sm:text-3xl md:text-[40px]">
-                  احدث المشاريع
-                </h2>
-                <p>
-                  استعرض مشاريع دار الحنيان للاستشارات الهندسية التي تعكس التميز
-                  والابتكار في تقديم الحلول الهندسية المتكاملة.
-                </p>
-              </div>
-            </div>
+          <div className="mx-auto mb-[60px] max-w-xl text-center">
+            <span className="text-primary mb-2 block text-lg font-semibold">
+              مشاريعنا
+            </span>
+            <h2 className="mb-3 text-2xl leading-[1.208] font-bold sm:text-3xl md:text-[40px]">
+              احدث المشاريع
+            </h2>
+            <p>
+              استعرض مشاريع دار الحنيان للاستشارات الهندسية التي تعكس التميز
+              والابتكار في تقديم الحلول الهندسية المتكاملة.
+            </p>
           </div>
 
-          <div className="w-full flex flex-wrap justify-center -mx-4">
-            <div className="w-full px-4">
-              <ul className="flex flex-wrap justify-center mb-12 space-x-1">
-                <li className="mb-1">
-                  <button
-                    onClick={() => handleProject("all")}
-                    className={`inline-block rounded-lg py-2 px-5 text-center text-base font-semibold transition md:py-3 lg:px-8 ${
-                      showCard === "all"
-                        ? "activeClasses bg-primary text-white"
-                        : "inactiveClasses text-body-color dark:text-dark-6 hover:bg-primary hover:text-white"
-                    }`}
+          <div className="w-full flex flex-wrap justify-center">
+            <ul className="flex flex-wrap justify-center mb-12 space-x-1">
+              {projectsCategories.map((category) => (
+                <li key={category.id} className="mb-1">
+                  <Button
+                    onClick={() => handleProject(category.id)}
+                    variant={showCard === category.id ? "secondary" : "outline"}
+                    size={"lg"}
                   >
-                    جميع المشاريع
-                  </button>
+                    {category.label}
+                  </Button>
                 </li>
-                <li className="mb-1">
-                  <button
-                    onClick={() => handleProject("الأعمال المساحية")}
-                    className={`inline-block rounded-lg py-2 px-5 text-center text-base font-semibold transition md:py-3 lg:px-8 ${
-                      showCard === "الأعمال المساحية"
-                        ? "activeClasses bg-primary text-white"
-                        : "inactiveClasses text-body-color dark:text-dark-6 hover:bg-primary hover:text-white"
-                    }`}
-                  >
-                    الأعمال المساحية
-                  </button>
-                </li>
-                <li className="mb-1">
-                  <button
-                    onClick={() => handleProject("تصميم خارجي")}
-                    className={`inline-block rounded-lg py-2 px-5 text-center text-base font-semibold transition md:py-3 lg:px-8 ${
-                      showCard === "تصميم خارجي"
-                        ? "activeClasses bg-primary text-white"
-                        : "inactiveClasses text-body-color dark:text-dark-6 hover:bg-primary hover:text-white"
-                    }`}
-                  >
-                    تصميم خارجي
-                  </button>
-                </li>
-                <li className="mb-1">
-                  <button
-                    onClick={() => handleProject("تصميم داخلي")}
-                    className={`inline-block rounded-lg py-2 px-5 text-center text-base font-semibold transition md:py-3 lg:px-8 ${
-                      showCard === "تصميم داخلي"
-                        ? "activeClasses bg-primary text-white"
-                        : "inactiveClasses text-body-color dark:text-dark-6 hover:bg-primary hover:text-white"
-                    }`}
-                  >
-                    تصميم داخلي
-                  </button>
-                </li>
-              </ul>
-            </div>
+              ))}
+            </ul>
           </div>
-          <div className="flex flex-wrap -mx-4">
-            <PortfolioCard
-              ImageHref="https://cdn.tailgrids.com/assets/images/marketing/portfolio/portfolio-01/image-01.jpg"
-              category="Branding"
-              title="Creative Agency"
-              button="View Details"
-              buttonHref="#"
-              showCard={showCard}
-            />
-            <PortfolioCard
-              ImageHref="https://cdn.tailgrids.com/assets/images/marketing/portfolio/portfolio-01/image-06.jpg"
-              category="marketing"
-              title="Creative Agency"
-              button="View Details"
-              buttonHref="#"
-              showCard={showCard}
-            />
-            <PortfolioCard
-              ImageHref="https://cdn.tailgrids.com/assets/images/marketing/portfolio/portfolio-01/image-02.jpg"
-              category="marketing"
-              title="Creative Agency"
-              button="View Details"
-              buttonHref="#"
-              showCard={showCard}
-            />
-            <PortfolioCard
-              ImageHref="https://cdn.tailgrids.com/assets/images/marketing/portfolio/portfolio-01/image-03.jpg"
-              category="Development"
-              title="Creative Agency"
-              button="View Details"
-              buttonHref="#"
-              showCard={showCard}
-            />
-            <PortfolioCard
-              ImageHref="https://cdn.tailgrids.com/assets/images/marketing/portfolio/portfolio-01/image-04.jpg"
-              category="Design"
-              title="Creative Agency"
-              button="View Details"
-              buttonHref="#"
-              showCard={showCard}
-            />
-            <PortfolioCard
-              ImageHref="https://cdn.tailgrids.com/assets/images/marketing/portfolio/portfolio-01/image-05.jpg"
-              category="Marketing"
-              title="Creative Agency"
-              button="View Details"
-              buttonHref="#"
-              showCard={showCard}
-            />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {projectsTopics.map((project) => (
+              <Suspense
+                key={`${project.category} - ${project.id}`}
+                fallback={
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {[...Array(6)].map((_, i) => (
+                      <div
+                        key={i}
+                        className="bg-gray-100 rounded-lg p-4 animate-pulse"
+                      >
+                        <div className="w-full h-48 bg-gray-200 rounded-lg mb-4"></div>
+                        <div className="h-4 bg-gray-200 rounded w-3/4 mb-2"></div>
+                        <div className="h-4 bg-gray-200 rounded w-1/2"></div>
+                      </div>
+                    ))}
+                  </div>
+                }
+              >
+                <ProjectCard
+                  ImageSrc={project.image.src}
+                  category={project.category}
+                  title={project.label}
+                  button="عرض التفاصيل"
+                  buttonHref={`/projects/${project.link}`}
+                  showCard={showCard}
+                />
+              </Suspense>
+            ))}
           </div>
         </div>
       </section>
@@ -141,17 +82,17 @@ const OurProjectsPage = () => {
 
 export default OurProjectsPage;
 
-const PortfolioCard = ({
+const ProjectCard = ({
   showCard,
   category,
-  ImageHref,
+  ImageSrc,
   title,
   button,
   buttonHref,
 }: {
   showCard: string;
   category: string;
-  ImageHref: string;
+  ImageSrc: string;
   title: string;
   button: string;
   buttonHref: string;
@@ -159,30 +100,31 @@ const PortfolioCard = ({
   return (
     <>
       <div
-        className={`w-full px-4 md:w-1/2 xl:w-1/3 ${
-          showCard === "all" || showCard === category.toLowerCase()
-            ? "block"
-            : "hidden"
+        className={`w-[380px] ${
+          showCard === "all" || showCard === category ? "block" : "hidden"
         }`}
       >
-        <div className="relative mb-12">
-          <div className="overflow-hidden rounded-[10px]">
-            <img src={ImageHref} alt="portfolio" className="w-full" />
-          </div>
-          <div className="relative z-10 mx-7 -mt-20 rounded-lg bg-white dark:bg-dark-2 py-[34px] px-3 text-center shadow-portfolio dark:shadow-box-dark">
-            <span className="text-primary mb-2 block text-sm font-medium">
-              {category}
-            </span>
-            <h3 className="text-dark dark:text-white mb-5 text-xl font-bold">
-              {title}
-            </h3>
-            <a
-              href={buttonHref}
-              className="text-body-color dark:text-dark-6 hover:border-primary hover:bg-primary inline-block rounded-md border border-stroke dark:border-dark-3 py-[10px] px-7 text-sm font-medium transition hover:text-white"
-            >
-              {button}
-            </a>
-          </div>
+        <div className="rounded-xl w-full overflow-hidden relative h-[430px]">
+          <Image
+            width={1000}
+            height={1000}
+            src={ImageSrc}
+            alt={title}
+            className="w-full h-full object-cover object-center"
+            loading="lazy"
+          />
+        </div>
+        <div className="relative z-10 mx-7 -mt-20 rounded-2xl bg-white py-6 px-3 text-center shadow-lg">
+          <span className="text-primary mb-2 block text-sm font-medium">
+            {category}
+          </span>
+          <h3 className="mb-5 text-xl font-bold">{title}</h3>
+          <Link
+            href={buttonHref}
+            className="hover:header-gradient inline-block rounded-md border py-[8px] px-7 text-sm font-medium transition"
+          >
+            {button}
+          </Link>
         </div>
       </div>
     </>

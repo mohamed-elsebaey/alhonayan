@@ -14,7 +14,7 @@ export const OurServices = () => {
     <div
       className="py-16 section-margin bg-gray-100 bg-cover bg-center"
       style={{
-        backgroundImage: "url('/background/background-image3.png')",
+        backgroundImage: "url('/background/background-image5.png')",
       }}
     >
       <div className="content-width">

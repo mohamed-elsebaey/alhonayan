@@ -1,4 +1,4 @@
-// import OurProjectsPage from "@/components/pages/our-projects/OurProjectsPage";
+import OurProjectsPage from "@/components/pages/our-projects/OurProjectsPage";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 function page() {
   return (
     <>
-      {/* <OurProjectsPage />; */}
+      <OurProjectsPage />
     </>
   );
 }
