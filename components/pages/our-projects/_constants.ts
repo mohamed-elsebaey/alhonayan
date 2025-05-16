@@ -2,6 +2,8 @@ export const projectsCategories = [
   { id: "all", label: "كافة المشاريع" },
   { id: "Interior Design", label: "التصميم الداخلي" },
   { id: "Exterior Design", label: "التصميم الخارجي" },
+  { id: "Supervision", label: "إشراف على التنفيذ" },
+  { id: "Surveying Works", label: "أعمال مساحية" },
 ];
 
 export type ProjectsCategory = Exclude<

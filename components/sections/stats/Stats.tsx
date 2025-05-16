@@ -49,7 +49,7 @@ const Stats = () => {
         </div>
 
         <div className="grid grid-cols-1 gap-6 px-6 mt-8 sm:px-0 lg:mt-12 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-12">
-          <div className="overflow-hidden border border-border rounded-lg header-gradient header-gradient">
+          <div className="overflow-hidden border border-border rounded-lg header-gradient">
             <div className="px-4 py-6">
               <div className="flex items-start">
                 <div className="flex-shrink-0 w-12 h-12 text-foreground bg-white rounded-full flex items-center justify-center">
@@ -72,7 +72,7 @@ const Stats = () => {
                   <h4 className="text-4xl font-bold">
                     {numbers.yearsInBusiness}+
                   </h4>
-                  <p className="mt-1.5 text-white text-white">سنوات في العمل</p>
+                  <p className="mt-1.5 text-white">سنوات في العمل</p>
                 </div>
               </div>
             </div>
