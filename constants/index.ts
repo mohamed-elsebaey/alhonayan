@@ -94,20 +94,27 @@ export const whatsappContacts: Array<{
   number: string;
   label: string;
   address: string;
+  location?: string;
 }> = [
   {
     number: "+966508153268",
     label: "الرياض",
     address: "طريق أنس بن مالك - حي الياسمين",
+    location:
+      "https://www.google.com/maps/place/%D8%B4%D8%B1%D9%83%D8%A9+%D8%AF%D8%A7%D8%B1+%D8%A7%D9%84%D8%AD%D9%86%D9%8A%D8%A7%D9%86+%D9%84%D9%84%D8%A5%D8%B3%D8%AA%D8%B4%D8%A7%D8%B1%D8%A7%D8%AA+%D8%A7%D9%84%D9%87%D9%86%D8%AF%D8%B3%D9%8A%D8%A9,+%D8%AD%D9%8A,+Anas+Ibn+Malik+Rd,+Alyasmin,+Riyadh+13325%E2%80%AD/data=!4m2!3m1!1s0x3e2ee5276e0c1e1b:0xe32c869f7c22626b?utm_source=mstt_1&entry=gps&coh=192189&g_ep=CAESBzI1LjI1LjAYACDXggMqhwEsOTQyNzgzMDYsOTQyNzUzMjAsOTQyMjMyOTksOTQyMTY0MTMsOTQyMTI0OTYsOTQyMDczOTQsOTQyMDc1MDYsOTQyMDg1MDYsOTQyMTc1MjMsOTQyMTg2NTMsOTQyMjk4MzksOTQyNzUxNjgsNDcwODQzOTMsOTQyMTMyMDAsOTQyNTgzMjVCAlNB&skid=1dc51258-0488-4245-8f71-255c92e75eef",
   },
   {
     number: "+966583195157",
     label: "القريات",
     address: "شارع الملك فيصل - حي الخالدية",
+    location:
+      "https://www.google.com/maps/place/%D9%85%D9%83%D8%AA%D8%A8+%D8%AF%D8%A7%D8%B1+%D8%A7%D9%84%D8%AD%D9%86%D9%8A%D8%A7%D9%86+%D9%84%D9%84%D8%A5%D8%B3%D8%AA%D8%B4%D8%A7%D8%B1%D8%A7%D8%AA+%D8%A7%D9%84%D9%87%D9%86%D8%AF%D8%B3%D9%8A%D8%A9,+%D8%B7%D8%B1%D9%8A%D9%82+%D8%A7%D9%84%D9%85%D9%84%D9%83+%D9%81%D9%8A%D8%B5%D9%84%D8%8C+%D8%AD%D9%8A+%D8%A7%D9%84%D8%AE%D8%A7%D9%84%D8%AF%D9%8A%D8%A9,+%D8%A7%D9%84%D9%82%D8%B1%D9%8A%D8%A7%D8%AA+77451%E2%80%AD/data=!4m2!3m1!1s0x151007e5f287cf4d:0x5c80d080af9b9afd?utm_source=mstt_1&entry=gps&coh=192189&g_ep=CAESBzI1LjI1LjAYACDXggMqhwEsOTQyNjc3MjYsOTQyNzUzMTgsOTQyMjMyOTksOTQyMTY0MTMsOTQyMTI0OTYsOTQyMDczOTQsOTQyMDc1MDYsOTQyMDg1MDYsOTQyMTc1MjMsOTQyMTg2NTMsOTQyMjk4MzksOTQyNzUxNjgsNDcwODQzOTMsOTQyMTMyMDAsOTQyNTgzMjVCAlNB&skid=3d48c869-d633-4d8b-b03c-9223a077618a&g_st=aw",
   },
   {
     number: "+966508143828",
     label: "سكاكا",
     address: "شارع مكة المكرمة - حى الشفاء ",
+    location:
+      "https://www.google.com/maps/place/29%C2%B057'47.6%22N+40%C2%B012'01.1%22E/@29.9632339,40.2024946,17z/data=!3m1!4b1!4m4!3m3!8m2!3d29.9632339!4d40.2003059?entry=ttu&g_ep=EgoyMDI1MDYzMC4wIKXMDSoASAFQAw%3D%3D",
   },
 ];

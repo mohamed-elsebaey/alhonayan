@@ -16,7 +16,7 @@ const ContactWithUs = () => {
                 تواصل معنا لأي استفسار أو فكرة.
               </p>
             </div>
-            <Link href="/">
+            <Link href="/contact">
               <Button
                 size="lg"
                 className="font-semibold cursor-pointer"
