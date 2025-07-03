@@ -40,7 +40,7 @@ const Carousel = ({
   }, [currentIndex, autoPlay, interval]);
 
   return (
-    <div className="relative w-full h-screen rounded-4xl overflow-hidden">
+    <div className="relative w-full h-[500px] md:h-[600px] rounded-4xl overflow-hidden">
       {/* Images */}
       <div className="relative w-full h-full">
         {images.map((image, index) => (
@@ -120,18 +120,18 @@ const Carousel = ({
   );
 };
 
-const Swiper = () => {
+const OldSwiper = () => {
   
   const images = swiperImagesUrl.map((image) => image.src);
 
   return (
     <div className="section-margin">
 
-    <div className="py-10">
+    <div className="content-width py-10">
       <Carousel images={images} autoPlay interval={5000} />
     </div>
     </div>
   );
 };
 
-export default Swiper;
+export default OldSwiper;
