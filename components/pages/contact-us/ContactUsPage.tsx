@@ -30,7 +30,7 @@ export const ContactUsPage = () => {
                     {whatsappContacts.map((branch) => (
                         <Card
                             key={branch.number}
-                            className=" flex flex-col gap-4 bg-white/90 backdrop-blur-sm border-2 border-primary/20 shadow-2xl p-6 md:p-8 animate-fadeIn rounded-2xl transition-all duration-300 hover:scale-[1.025] hover:shadow-[0_8px_32px_0_rgba(253,142,26,0.15)] hover:border-primary/40 hover:bg-gradient-to-l hover:from-[#fff7ed] hover:to-[#f3f8fc] w-full md:w-1/3 min-w-[500px]"
+                            className=" flex flex-col gap-4 bg-white/90 backdrop-blur-sm border-2 border-primary/20 shadow-2xl p-6 md:p-8 animate-fadeIn rounded-2xl transition-all duration-300 hover:scale-[1.025] hover:shadow-[0_8px_32px_0_rgba(253,142,26,0.15)] hover:border-primary/40 hover:bg-gradient-to-l hover:from-[#fff7ed] hover:to-[#f3f8fc] w-full md:w-1/3  md:min-w-[500px]"
                         >
                             {/* اسم الفرع */}
                             <div className="flex items-center justify-center mb-2">
@@ -39,13 +39,13 @@ export const ContactUsPage = () => {
                                 </span>
                             </div>
                             {/* العنوان */}
-                            <div className="flex items-center gap-2 text-gray-700 text-lg font-medium justify-center">
+                            <div className="flex items-center gap-2 text-gray-700 text-lg font-medium justify-start md:justify-center">
                                 <MapPinIcon className="w-5 h-5 text-secondary" />
                                 <span>العنوان:</span>
                                 <span className="font-semibold">{branch.address}</span>
                             </div>
                             {/* رقم التواصل */}
-                            <div className="flex items-center gap-2 text-gray-700 text-lg font-medium justify-center">
+                            <div className="flex items-center gap-2 text-gray-700 text-lg font-medium justify-start md:justify-center">
                                 <PhoneIcon className="w-5 h-5 text-secondary" />
                                 <span>رقم التواصل:</span>
                                 <Link
