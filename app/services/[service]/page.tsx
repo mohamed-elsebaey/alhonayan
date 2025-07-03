@@ -50,7 +50,7 @@ export default async function Page({ params }: Props) {
   }
 
   return (
-    <div className="section-margin mb-28">
+    <div className="section-margin pb-28">
       <div className="content-width flex flex-col gap-12">
         <div className="border-r-[5px] border-primary pr-5">
           <h1 className="text-3xl font-bold text-secondary mb-4">

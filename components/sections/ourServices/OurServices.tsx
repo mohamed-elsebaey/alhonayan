@@ -12,9 +12,9 @@ import Link from "next/link";
 export const OurServices = () => {
   return (
     <div
-      className="py-16 section-margin bg-gray-100 bg-cover bg-center"
+      className="py-16 pt-6 md:pt-10 bg-gray-100 bg-cover bg-center"
       style={{
-        backgroundImage: "url('/background/background-image5.png')",
+        backgroundImage: "url('/background/background-image6.png')",
       }}
     >
       <div className="content-width">

@@ -38,7 +38,7 @@ const Stats = () => {
       className="section-margin py-6 sm:py-12 lg:py-16 bg-cover bg-center"
       dir="ltr"
       style={{
-        backgroundImage: "url('/background/background-image5.png')",
+        backgroundImage: "url('/background/background-image6.png')",
       }}
     >
       <div className="content-width">

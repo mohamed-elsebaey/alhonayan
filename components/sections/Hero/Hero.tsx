@@ -10,7 +10,7 @@ import { DownloadCompanyProfileButton } from "../companyProfile/DownloadCompanyP
 const Hero = () => {
   return (
     <>
-      <section className="section-margin relative ">
+      <section className="section-margin relative pb-10">
         <div className="content-width">
           <div className="w-full justify-start items-center gap-8 grid lg:grid-cols-2 grid-cols-1">
             <div className="flex flex-col gap-8 items-center lg:items-start">

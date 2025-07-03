@@ -18,10 +18,12 @@ export default async function Layout({
   const resolvedParams = (await params).service;
 
   return (
-    <>
+    <div style={{
+        backgroundImage: "url('/background/background-image6.png')",
+      }}>
       <Breadcrumb serviceKey={resolvedParams} />
       {children}
-    </>
+    </div>
   );
 }
 
@@ -30,7 +32,7 @@ const Breadcrumb = ({ serviceKey }: { serviceKey: string }) => {
   const serviceName = serviceObj?.title?.ar || "تفاصيل الخدمة";
 
   return (
-    <div className="section-margin py-4 border-b md:py-5">
+    <div className="pt-6 md:pt-10 py-4 border-b md:py-5">
       <ul className="content-width flex items-center font-medium">
         <li className="flex items-center">
           <Link

@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 function page() {
   return (
     <>
-      <OurServices />;
+      <OurServices />
     </>
   );
 }
