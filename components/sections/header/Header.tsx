@@ -83,12 +83,12 @@ function Header({
 
               <li className="mt-2 md:mt-0">
                 {!login ? (
-                  <Link href="/sign-in">
+                  <Link href="/contact">
                     <Button
                       onClick={closeMenuHandler}
                       className="cursor-pointer"
                     >
-                      تسجيل الدخول{" "}
+                      تواصل معنا 
                     </Button>
                   </Link>
                 ) : (
