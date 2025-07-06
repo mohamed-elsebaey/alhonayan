@@ -31,7 +31,7 @@ const Hero = () => {
       setCurrentImageIndex((prevIndex) =>
         (prevIndex + 1) % heroImages.length
       );
-    }, 5000);
+    }, 3500);
 
     return () => clearInterval(interval);
   }, []);
