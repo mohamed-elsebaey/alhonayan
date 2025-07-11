@@ -9,7 +9,8 @@ async function fetchProjects() {
       headers: {
         "Content-Type": "application/json",
       },
-      // next: { revalidate: 60 }, // Uncomment if using Next.js caching
+      next: { revalidate: 60 }, // يحدث البيانات كل 60 ثانية
+      // cache: "no-store",
     });
     if (!res.ok) throw new Error("Failed to fetch categories");
     return await res.json();
@@ -30,7 +31,7 @@ async function Page() {
   const categories = await fetchProjects();
   const projectsCategories = categories?.projectsCategories || [];
   const projectsTopics = categories?.projectsTopics || [];
-
+  
   return (
     <>
       <OurProjectsPage projectsCategories={projectsCategories} projectsTopics={projectsTopics} />
