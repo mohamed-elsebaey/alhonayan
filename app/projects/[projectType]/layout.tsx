@@ -5,20 +5,22 @@ import { ArrowLeft, Home } from "lucide-react";
 interface LayoutProps {
   children: React.ReactNode;
   params: Promise<{
-    service: string;
+    projectType: string;
   }>;
 }
 
-export default async function Layout({ children }: LayoutProps) {
+export default async function Layout({ children,params }: LayoutProps) {
+  const projectTopic = (await params).projectType;
+  const projectTopicDecoded = decodeURIComponent(projectTopic);
   return (
     <>
-      <Breadcrumb />
+      <Breadcrumb path={projectTopicDecoded}/>
       {children}
     </>
   );
 }
 
-const Breadcrumb = () => {
+const Breadcrumb = ({path}:{path:string}) => {
   return (
     <div className="section-margin py-4 border-b md:py-5">
       <ul className="content-width flex items-center font-medium">
@@ -38,7 +40,7 @@ const Breadcrumb = () => {
           </Link>
           <ArrowLeft className="w-4 h-4 mx-2" />
         </li>
-        <li className="text-primary" >Project type</li>
+        <li className="text-primary" >{path}</li>
       </ul>
     </div>
   );

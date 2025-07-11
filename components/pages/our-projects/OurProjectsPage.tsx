@@ -3,9 +3,28 @@ import Image from "next/image";
 import React, { Suspense, useState } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { projectsTopics, projectsCategories } from "./_constants";
 
-const OurProjectsPage = () => {
+type ProjectCategory = {
+  id: string;
+  label: string;
+};
+
+interface ProjectImage {
+  id: number;
+  src: string;
+  alt: string;
+}
+
+export interface ProjectsTopics {
+  id: string;
+  label: string;
+  image: ProjectImage;
+  category: string;
+  description: string;
+  link: `/${string}`;
+}
+
+const OurProjectsPage = ({ projectsCategories, projectsTopics }: { projectsCategories: ProjectCategory[], projectsTopics: ProjectsTopics[] }) => {
   const [showCard, setShowCard] = useState("all");
 
   const handleProject = (category: string) => {
@@ -44,7 +63,7 @@ const OurProjectsPage = () => {
               ))}
             </ul>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center">
             {projectsTopics.map((project) => (
               <Suspense
                 key={`${project.category} - ${project.id}`}
@@ -68,7 +87,7 @@ const OurProjectsPage = () => {
                   category={project.category}
                   title={project.label}
                   button="عرض التفاصيل"
-                  buttonHref={`/projects/${project.link}`}
+                  buttonHref={`/projects/${project.link}?category=${project.category}`}
                   showCard={showCard}
                 />
               </Suspense>
@@ -82,7 +101,7 @@ const OurProjectsPage = () => {
 
 export default OurProjectsPage;
 
-const ProjectCard = ({
+export const ProjectCard = ({
   showCard,
   category,
   ImageSrc,
@@ -91,7 +110,7 @@ const ProjectCard = ({
   buttonHref,
 }: {
   showCard: string;
-  category: string;
+  category?: string;
   ImageSrc: string;
   title: string;
   button: string;
@@ -100,9 +119,8 @@ const ProjectCard = ({
   return (
     <>
       <div
-        className={`w-[380px] ${
-          showCard === "all" || showCard === category ? "block" : "hidden"
-        }`}
+        className={`w-[380px] ${showCard === "all" || showCard === category ? "block" : "hidden"
+          }`}
       >
         <div className="rounded-xl w-full overflow-hidden relative h-[430px]">
           <Image
@@ -114,7 +132,7 @@ const ProjectCard = ({
             loading="lazy"
           />
         </div>
-        <div className="relative z-10 mx-7 -mt-20 rounded-2xl bg-white py-6 px-3 text-center shadow-lg">
+        <div className="relative z-10 mx-7 -mt-20 rounded-2xl bg-white py-6 px-3 text-center shadow-lg backdrop-blur-sm border-2 border-primary/20 animate-fadeIn transition-all duration-300 hover:shadow-[0_8px_32px_0_rgba(253,142,26,0.15)] hover:border-primary/40 hover:bg-gradient-to-l hover:from-[#fff7ed] hover:to-[#f3f8fc]">
           <span className="text-primary mb-2 block text-sm font-medium">
             {category}
           </span>
