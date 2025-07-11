@@ -5,11 +5,12 @@ import FooterSection from "@/components/sections/Footer";
 import Header from "@/components/sections/header/Header";
 import { Toaster } from "sonner";
 import ScrollToTop from "@/components/ScrollToTop";
+import ImageProtection from "@/components/ImageProtection";
 
 const cairo = Cairo({
-  weight: ['400', '500', '600', '700'],
-  variable: '--font-cairo',
-  subsets: ['arabic', 'latin'],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-cairo",
+  subsets: ["arabic", "latin"],
 });
 
 export const metadata: Metadata = {
@@ -23,15 +24,21 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ar" dir="rtl" suppressHydrationWarning className="light max-w-[3000px] mx-auto">
+    <html
+      lang="ar"
+      dir="rtl"
+      suppressHydrationWarning
+      className="light max-w-[3000px] mx-auto"
+    >
       <body
         className={`${cairo.variable} font-sans antialiased`}
       >
         <Header userRole={false} profilePath="" />
+        <ImageProtection />
         {children}
-        <FooterSection/>
+        <FooterSection />
         <ScrollToTop />
-        <Toaster /> 
+        <Toaster />
       </body>
     </html>
   );

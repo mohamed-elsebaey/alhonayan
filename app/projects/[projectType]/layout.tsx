@@ -9,18 +9,18 @@ interface LayoutProps {
   }>;
 }
 
-export default async function Layout({ children,params }: LayoutProps) {
+export default async function Layout({ children, params }: LayoutProps) {
   const projectTopic = (await params).projectType;
   const projectTopicDecoded = decodeURIComponent(projectTopic);
   return (
     <>
-      <Breadcrumb path={projectTopicDecoded}/>
+      <Breadcrumb path={projectTopicDecoded} />
       {children}
     </>
   );
 }
 
-const Breadcrumb = ({path}:{path:string}) => {
+const Breadcrumb = ({ path }: { path: string }) => {
   return (
     <div className="section-margin py-4 border-b md:py-5">
       <ul className="content-width flex items-center font-medium">
@@ -40,7 +40,7 @@ const Breadcrumb = ({path}:{path:string}) => {
           </Link>
           <ArrowLeft className="w-4 h-4 mx-2" />
         </li>
-        <li className="text-primary" >{path}</li>
+        <li className="text-primary">{path}</li>
       </ul>
     </div>
   );
