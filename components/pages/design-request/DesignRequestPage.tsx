@@ -36,24 +36,86 @@ const DesignRequestPage = () => {
     budget: "",
     designReference: "",
   });
+  const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  // دالة التحقق من صحة البيانات
+  const validateFormData = (data: FormData) => {
+    // تحقق من الحقول المطلوبة
+    if (!data.name || !data.email || !data.phone || !data.serviceType || !data.buildingType) {
+      toast.error("يرجى ملء جميع الحقول المطلوبة");
+      return false;
+    }
+    // تحقق من صحة البريد الإلكتروني
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(data.email)) {
+      toast.error("يرجى إدخال بريد إلكتروني صحيح");
+      return false;
+    }
+    // تحقق من صحة رقم الجوال السعودي
+    const phoneRegex = /^05\d{8}$|^\+9665\d{8}$/;
+    if (!phoneRegex.test(data.phone)) {
+      toast.error("يرجى إدخال رقم جوال سعودي صحيح");
+      return false;
+    }
+    // تحقق من القيم الرقمية (المساحة، الطول، العرض، الميزانية)
+    if (data.area && (isNaN(Number(data.area)) || Number(data.area) <= 0)) {
+      toast.error("يرجى إدخال مساحة أرض صحيحة");
+      return false;
+    }
+    if (data.plotNumber && (isNaN(Number(data.plotNumber)) || Number(data.plotNumber) <= 0)) {
+      toast.error("يرجى إدخال طول واجهة صحيح");
+      return false;
+    }
+    if (data.planNumber && (isNaN(Number(data.planNumber)) || Number(data.planNumber) <= 0)) {
+      toast.error("يرجى إدخال عرض واجهة صحيح");
+      return false;
+    }
+    if (data.budget && (isNaN(Number(data.budget)) || Number(data.budget) <= 0)) {
+      toast.error("يرجى إدخال ميزانية صحيحة");
+      return false;
+    }
+    return true;
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    // التحقق من صحة البيانات
-    if (
-      !formData.name ||
-      !formData.email ||
-      !formData.phone ||
-      !formData.serviceType ||
-      !formData.buildingType
-    ) {
-      toast.error("يرجى ملء جميع الحقول المطلوبة");
+    // تحقق من صحة البيانات قبل الإرسال
+    if (!validateFormData(formData)) {
       return;
     }
-
-    // هنا يمكنك إضافة منطق إرسال البيانات
-    toast.success("تم إرسال الطلب بنجاح");
+    setLoading(true);
+    try {
+      const res = await fetch("/api/send-design-request", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+      const data = await res.json();
+      if (data.success) {
+        toast.success("تم إرسال الطلب بنجاح");
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          serviceType: "",
+          buildingType: "",
+          city: "",
+          plotNumber: "",
+          planNumber: "",
+          area: "",
+          floors: "",
+          budget: "",
+          designReference: "",
+        });
+      } else {
+        toast.error("حدث خطأ أثناء إرسال الطلب: " + (data.error || ""));
+      }
+    } catch (err) {
+      toast.error("تعذر الاتصال بالخادم. حاول لاحقًا." + err);
+    } finally {
+      setLoading(false);
+    }
   };
 
   const handleChange = (
@@ -271,8 +333,19 @@ const DesignRequestPage = () => {
                 type="submit"
                 size="lg"
                 className="bg-primary hover:bg-primary/90 text-white px-12 py-6 text-lg rounded-full transition-all transform hover:scale-105"
+                disabled={loading}
               >
-                إرسال الطلب
+                {loading ? (
+                  <span className="flex items-center justify-center gap-2">
+                    <svg className="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"></path>
+                    </svg>
+                    جاري الإرسال...
+                  </span>
+                ) : (
+                  "إرسال الطلب"
+                )}
               </Button>
             </div>
           </form>
