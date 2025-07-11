@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound, redirect } from "next/navigation";
 import ImageMasonryGallery from "@/components/sections/ImageMasonryGallery";
+import BackToButton from "@/components/sections/BackToButton";
 
 
 interface PageProps {
@@ -65,6 +66,7 @@ async function page({ params, searchParams }: PageProps) {
   return (
     <>
       <main className="min-h-screen content-width py-16">
+        <BackToButton />
         <ImageMasonryGallery images={ProjectImages} />
       </main>
     </>
