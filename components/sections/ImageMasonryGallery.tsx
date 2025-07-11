@@ -18,7 +18,6 @@ interface Props {
 
 const ImageMasonryGallery = ({ images }: Props) => {
   const [openImage, setOpenImage] = useState<ProjectImage | null>(null);
-  console.log("ImageMasonryGallery images:", images);
   return (
     <>
       <div className="columns-1 sm:columns-1 md:columns-2 lg:columns-2 xl:columns-3 gap-8">

@@ -26,7 +26,7 @@ export interface ProjectsTopics {
 
 const OurProjectsPage = ({ projectsCategories, projectsTopics }: { projectsCategories: ProjectCategory[], projectsTopics: ProjectsTopics[] }) => {
   const [showCard, setShowCard] = useState("all");
-
+  
   const handleProject = (category: string) => {
     setShowCard(category);
   };

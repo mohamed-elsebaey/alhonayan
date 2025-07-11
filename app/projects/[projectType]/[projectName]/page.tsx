@@ -31,7 +31,7 @@ async function fetchProjectImages(category: string, projectTopic: string, projec
       headers: {
         "Content-Type": "application/json",
       },
-      // next: { revalidate: 60 }, // Uncomment if using Next.js caching
+      next: { revalidate: 60 },
     });
     if (!res.ok)
       return false;
