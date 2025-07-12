@@ -42,3 +42,6 @@ next-env.d.ts
 
 
 /test
+
+/public/images/team
+/components/sections/FounderSection.tsx

@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/next"
 import type { Metadata } from "next";
 import { Cairo } from "next/font/google";
 import "./globals.css";
@@ -33,6 +34,7 @@ export default function RootLayout({
       <body
         className={`${cairo.variable} font-sans antialiased`}
       >
+        <Analytics />
         <Header userRole={false} profilePath="" />
         <ImageProtection />
         {children}
